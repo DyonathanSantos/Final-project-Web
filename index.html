@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza Hub - Seu Espaço de Autocuidado</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Link escondido pra quem navega pelo teclado (acessibilidade) -->
+    <a href="#conteudo-principal" class="link-atalho-teclado">Ir para o conteúdo principal</a>
+
+    <!-- Menu Padrão que repete em todas as páginas -->
+    <header id="cabecalho-principal">
+        <div class="container header-flex">
+            <a href="index.html" id="logo"><strong>✨ Beleza Hub</strong></a>
+            <div class="header-interacoes">
+                <nav id="menu-navegacao">
+                    <ul>
+                        <li><a href="index.html" id="link-inicio" class="active">Início</a></li>
+                        <li><a href="cadastro.html" id="link-cadastro">Cadastro</a></li>
+                        <li><a href="login.html" id="link-login">Login</a></li>
+                        <li><a href="agendamento.html" id="link-agendamento" class="display-none">Agendamento</a></li>
+                        <li><a href="gestao.html" id="link-gestao" class="display-none">Gestão</a></li>
+                        <li><a href="perfil.html" id="link-perfil" class="display-none">Perfil</a></li>
+                        <li><a href="sobre.html" id="link-sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-tema" class="btn-tema-emoji">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section id="banner-hero" class="text-center">
+            <div class="container container-restrito">
+                <h1 id="hero-titulo">Seu Hub de Beleza e Bem-Estar</h1>
+                <p id="hero-texto">Facilitamos a sua organização e conectamos você aos melhores serviços de estética da região com agendamentos 100% autônomos.</p>
+                <div class="grupo-botoes-hero">
+                    <a href="cadastro.html" class="botao-principal">Criar minha Conta</a>
+                    <a href="login.html" class="botao-secundario">Acessar Conta</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="problemas-resolvidos" class="secao-padrao">
+            <div class="container text-center">
+                <h2 class="titulo-secao">Por que usar o Beleza Hub?</h2>
+                <p class="subtitulo-secao">Adeus agendamentos manuais e planilhas confusas. Olá praticidade!</p>
+                
+                <div class="linha">
+                    <div class="coluna-3">
+                        <div class="cartao-beneficio">
+                            <span class="icone-beneficio">📅</span>
+                            <h3>Agendamento Autônomo</h3>
+                            <p>Escolha o serviço, o dia da semana e o horário ideal diretamente pela nossa plataforma.</p>
+                        </div>
+                    </div>
+                    <div class="coluna-3">
+                        <div class="cartao-beneficio">
+                            <span class="icone-beneficio">⚡</span>
+                            <h3>Confirmação Automática</h3>
+                            <p>O sistema armazena suas preferências de forma segura no seu perfil em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="coluna-3">
+                        <div class="cartao-beneficio">
+                            <span class="icone-beneficio">📊</span>
+                            <h3>Visualização do Profissional</h3>
+                            <p>Profissionais contam com um painel exclusivo para conferir seus atendimentos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nossos-servicos" class="secao-padrao secao-fundo-alternativo">
+            <div class="container">
+                <h2 class="titulo-secao text-center">Nossos Serviços</h2>
+                <p class="subtitulo-secao text-center">Profissionais altamente gabaritados prontos para cuidar de você</p>
+                
+                <div class="linha">
+                    <div class="coluna-3">
+                        <article class="cartao-servico">
+                            <h3>💇‍♀️ Cabelo & Hidratação</h3>
+                            <p>Cortes modernos, coloração de alta performance e cronogramas capilares restauradores.</p>
+                            <span class="preco-servico">A partir de R$ 80,00</span>
+                        </article>
+                    </div>
+                    <div class="coluna-3">
+                        <article class="cartao-servico">
+                            <h3>💅 Manicure & Pedicure</h3>
+                            <p>Alongamentos duradouros em gel, esmaltação premium e SPA para a saúde de mãos e pés.</p>
+                            <span class="preco-servico">A partir de R$ 50,00</span>
+                        </article>
+                    </div>
+                    <div class="coluna-3">
+                        <article class="cartao-servico">
+                            <h3>🌸 Estética Facial</h3>
+                            <p>Limpezas de pele profundas, drenagens faciais e massagens relaxantes reconfortantes.</p>
+                            <span class="preco-servico">A partir de R$ 120,00</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Beleza Hub. Desenvolvido para a disciplina de Desenvolvimento Web.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

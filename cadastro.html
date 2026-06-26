@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Beleza Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="link-atalho-teclado">Ir para o conteúdo principal</a>
+
+    <header id="cabecalho-principal">
+        <div class="container header-flex">
+            <a href="index.html" id="logo"><strong>✨ Beleza Hub</strong></a>
+            <div class="header-interacoes">
+                <nav id="menu-navegacao">
+                    <ul>
+                        <li><a href="index.html" id="link-inicio">Início</a></li>
+                        <li><a href="cadastro.html" id="link-cadastro" class="active">Cadastro</a></li>
+                        <li><a href="login.html" id="link-login">Login</a></li>
+                        <li><a href="agendamento.html" id="link-agendamento" class="display-none">Agendamento</a></li>
+                        <li><a href="gestao.html" id="link-gestao" class="display-none">Gestão</a></li>
+                        <li><a href="perfil.html" id="link-perfil" class="display-none">Perfil</a></li>
+                        <li><a href="sobre.html" id="link-sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-tema" class="btn-tema-emoji">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="secao-padrao">
+        <div class="container-pequeno">
+            <h1 class="text-center">Crie sua Conta</h1>
+            <p class="text-center" style="margin-bottom: 20px;">Insira seus dados para começar a gerenciar sua rotina de estética.</p>
+
+            <form id="formulario-cadastro">
+                <div class="campo-grupo">
+                    <label for="cad-nome">Nome Completo:</label>
+                    <input type="text" id="cad-nome" required placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="cad-email">E-mail de Acesso:</label>
+                    <input type="email" id="cad-email" required placeholder="exemplo@email.com">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="cad-telefone">Telefone Celular:</label>
+                    <input type="tel" id="cad-telefone" required placeholder="(19) 99999-9999">
+                </div>
+
+                <!-- Aqui o usuário escolhe se quer ser cliente ou profissional -->
+                <div class="campo-grupo">
+                    <label for="cad-tipo">Tipo de Perfil:</label>
+                    <select id="cad-tipo" required>
+                        <option value="cliente">Cliente (Quero realizar agendamentos)</option>
+                        <option value="profissional">Profissional / Gestor (Quero gerenciar a agenda)</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="cad-senha">Senha de Acesso:</label>
+                    <input type="password" id="cad-senha" required placeholder="Crie uma senha de segurança">
+                </div>
+
+                <div class="campo-grupo-checkbox">
+                    <input type="checkbox" id="termos" required>
+                    <label for="termos">Aceito os termos e as políticas operacionais de reserva do Beleza Hub.</label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="botao-principal">Finalizar Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 Beleza Hub. Todos os direitos reservados.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

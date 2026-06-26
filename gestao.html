@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas de Gestão - Beleza Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="link-atalho-teclado">Ir para o conteúdo principal</a>
+
+    <header id="cabecalho-principal">
+        <div class="container header-flex">
+            <a href="index.html" id="logo"><strong>✨ Beleza Hub</strong></a>
+            <div class="header-interacoes">
+                <nav id="menu-navegacao">
+                    <ul>
+                        <li><a href="index.html" id="link-inicio">Início</a></li>
+                        <li><a href="cadastro.html" id="link-cadastro">Cadastro</a></li>
+                        <li><a href="login.html" id="link-login">Login</a></li>
+                        <li><a href="agendamento.html" id="link-agendamento" class="display-none">Agendamento</a></li>
+                        <li><a href="gestao.html" id="link-gestao" class="active">Gestão</a></li>
+                        <li><a href="perfil.html" id="link-perfil" class="display-none">Perfil</a></li>
+                        <li><a href="sobre.html" id="link-sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-tema" class="btn-tema-emoji">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="secao-padrao">
+        <div class="container">
+            <h1 class="text-center">Painel de Métricas Operacionais</h1>
+            <p class="text-center" id="texto-descricao-gestao" style="margin-bottom: 20px;">Carregando relatórios consolidados do profissional...</p>
+
+            <div class="linha">
+                <div class="coluna-1">
+                    <div class="cartao-perfil">
+                        <h3>📊 Estatísticas de Produtividade</h3>
+                        <br>
+                        
+                        <!-- Caixinhas com os números -->
+                        <div class="linha">
+                            <div class="coluna-3 text-center">
+                                <div class="bloco-indicador">
+                                    <span class="titulo-indicador">Meus Atendimentos</span>
+                                    <strong class="valor-indicador" id="ind-total-servicos">0</strong>
+                                </div>
+                            </div>
+                            <div class="coluna-3 text-center">
+                                <div class="bloco-indicador">
+                                    <span class="titulo-indicador">Meu Faturamento Estimado</span>
+                                    <strong class="valor-indicador" id="ind-faturamento">R$ 0,00</strong>
+                                </div>
+                            </div>
+                            <div class="coluna-3 text-center">
+                                <div class="bloco-indicador">
+                                    <span class="titulo-indicador">Taxa de Cancelamentos</span>
+                                    <strong class="valor-indicador text-verde">0%</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        
+                        <h3>👥 Próximos Atendimentos Designados a Você</h3>
+                        <p>Filtragem em tempo real de clientes que optaram pelo seu atendimento.</p>
+                        <br>
+                        <table class="tabela-padrao">
+                            <thead>
+                                <tr>
+                                    <th>Data e Horário</th>
+                                    <th>Procedimento Requerido</th>
+                                    <th>Identificação do Cliente</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-atendimentos-profissional">
+                                <!-- O script.js preenche essa tabela -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 Beleza Hub. Todos os direitos reservados.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

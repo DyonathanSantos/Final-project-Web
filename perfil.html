@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Painel - Beleza Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="link-atalho-teclado">Ir para o conteúdo principal</a>
+
+    <header id="cabecalho-principal">
+        <div class="container header-flex">
+            <a href="index.html" id="logo"><strong>✨ Beleza Hub</strong></a>
+            <div class="header-interacoes">
+                <nav id="menu-navegacao">
+                    <ul>
+                        <li><a href="index.html" id="link-inicio">Início</a></li>
+                        <li><a href="cadastro.html" id="link-cadastro">Cadastro</a></li>
+                        <li><a href="login.html" id="link-login">Login</a></li>
+                        <li><a href="agendamento.html" id="link-agendamento" class="display-none">Agendamento</a></li>
+                        <li><a href="gestao.html" id="link-gestao" class="display-none">Gestão</a></li>
+                        <li><a href="perfil.html" class="active">Perfil</a></li>
+                        <li><a href="sobre.html" id="link-sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-tema" class="btn-tema-emoji">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="secao-padrao">
+        <div class="container">
+            <h1 class="text-center">Meu Perfil de Cadastro</h1>
+            <p class="text-center" style="margin-bottom: 20px;">Altere suas informações pessoais ou modifique o tipo de acesso à conta.</p>
+
+            <div class="linha">
+                <!-- Coluna da esquerda: Dados da pessoa -->
+                <div id="coluna-dados-perfil" class="coluna-2">
+                    <div class="cartao-perfil">
+                        <h3>📋 Informações Pessoais</h3>
+                        <br>
+                        <form id="formulario-perfil">
+                            <div class="campo-grupo">
+                                <label for="nome">Nome Completo:</label>
+                                <input type="text" id="nome" required>
+                            </div>
+                            <div class="campo-grupo">
+                                <label for="email">E-mail Cadastrado:</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="campo-grupo">
+                                <label for="telefone">Telefone Celular:</label>
+                                <input type="tel" id="telefone">
+                            </div>
+                            <div class="campo-grupo">
+                                <label for="tipo">Tipo de Conta:</label>
+                                <select id="tipo" required>
+                                    <option value="cliente">Cliente (Visualizar Agendamentos)</option>
+                                    <option value="profissional">Profissional / Gestor (Administrador)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="botao-principal">Confirmar e Atualizar Dados</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Coluna da direita: Histórico de reservas (O JS esconde se for profissional) -->
+                <div id="coluna-historico-perfil" class="coluna-2">
+                    <div class="cartao-perfil">
+                        <h3>📅 Minhas Reservas Ativas</h3>
+                        <br>
+                        <table class="tabela-padrao">
+                            <thead>
+                                <tr>
+                                    <th>Serviço</th>
+                                    <th>Data e Hora</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-atendimentos-perfil">
+                                <!-- O JS preenche isso aqui -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <!-- Botões de Sair e Apagar Conta -->
+            <div class="linha">
+                <div class="coluna-1 text-center">
+                    <div class="cartao-perfil">
+                        <h3>🔒 Gerenciamento da Sessão</h3>
+                        <p>Gerencie sua saída da conta de forma segura ou remova seus registros locais.</p>
+                        <div class="botoes-container-seguro">
+                            <button id="btn-sair-perfil" class="botao-secundario btn-alerta">🚪 Desconectar da Conta (Logoff)</button>
+                            <button id="btn-excluir-perfil" class="botao-secundario btn-perigo">⚠️ Excluir Meu Perfil Permanentemente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal que abre por cima pra remarcar horário -->
+    <div id="modal-remarcar" class="modal-overlay display-none">
+        <div class="modal-conteudo container-pequeno">
+            <h2>Remarcar Horário</h2>
+            <p id="info-servico-remarcar">Serviço selecionado</p>
+            <br>
+            <form id="formulario-remarcar">
+                <input type="hidden" id="remarcar-id">
+                
+                <div class="campo-grupo">
+                    <label for="remarcar-data">Nova Data na Semana:</label>
+                    <select id="remarcar-data" required>
+                        <option value="2026-05-18">Segunda-feira - 18/05</option>
+                        <option value="2026-05-19">Terça-feira - 19/05</option>
+                        <option value="2026-05-20">Quarta-feira - 20/05</option>
+                        <option value="2026-05-21">Quinta-feira - 21/05</option>
+                        <option value="2026-05-22">Sexta-feira - 22/05</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="remarcar-horario">Novo Horário:</label>
+                    <select id="remarcar-horario" required>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                    </select>
+                </div>
+
+                <div class="grupo-botoes-modal">
+                    <button type="submit" class="botao-principal">Salvar Alterações</button>
+                    <button type="button" id="btn-fechar-modal" class="botao-secundario">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 Beleza Hub. Todos os direitos reservados.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

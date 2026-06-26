@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Beleza Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="link-atalho-teclado">Ir para o conteúdo principal</a>
+
+    <header id="cabecalho-principal">
+        <div class="container header-flex">
+            <a href="index.html" id="logo"><strong>✨ Beleza Hub</strong></a>
+            <div class="header-interacoes">
+                <nav id="menu-navegacao">
+                    <ul>
+                        <li><a href="index.html" id="link-inicio">Início</a></li>
+                        <li><a href="cadastro.html" id="link-cadastro">Cadastro</a></li>
+                        <li><a href="login.html" id="link-login">Login</a></li>
+                        <li><a href="agendamento.html" id="link-agendamento" class="active">Agendamento</a></li>
+                        <li><a href="gestao.html" id="link-gestao" class="display-none">Gestão</a></li>
+                        <li><a href="perfil.html" id="link-perfil" class="display-none">Perfil</a></li>
+                        <li><a href="sobre.html" id="link-sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-tema" class="btn-tema-emoji">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="secao-padrao">
+        <div class="container-pequeno">
+            <h1 class="text-center">Agende seu Serviço</h1>
+            <p class="text-center" style="margin-bottom: 20px;">Escolha a especialidade, a data na semana, o profissional e marque sua hora.</p>
+
+            <form id="formulario-agendamento">
+                <div class="campo-grupo">
+                    <label for="servico">Selecione o Serviço:</label>
+                    <select id="servico" required>
+                        <option value="">-- Escolha um Serviço --</option>
+                        <option value="cabelo">Corte e Hidratação de Cabelo (1h) - R$ 80,00</option>
+                        <option value="manicure">Manicure & Pedicure (45min) - R$ 50,00</option>
+                        <option value="estetica">Estética Facial Completa (30min) - R$ 120,00</option>
+                    </select>
+                </div>
+
+                <!-- Esse select vai ser preenchido pelo JS com os profissionais cadastrados -->
+                <div class="campo-grupo">
+                    <label for="profissional">Selecione o Especialista:</label>
+                    <select id="profissional" required>
+                        <option value="">-- Escolha um Profissional --</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Selecione uma Data na Semana:</label>
+                    <table class="tabela-calendario">
+                        <thead>
+                            <tr>
+                                <th>Seg (18)</th>
+                                <th>Ter (19)</th>
+                                <th>Qua (20)</th>
+                                <th>Qui (21)</th>
+                                <th>Sex (22)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label><input type="radio" name="data" value="2026-05-18"> 18/05</label></td>
+                                <td><label><input type="radio" name="data" value="2026-05-19"> 19/05</label></td>
+                                <td><label><input type="radio" name="data" value="2026-05-20"> 20/05</label></td>
+                                <td><label><input type="radio" name="data" value="2026-05-21" checked> 21/05</label></td>
+                                <td><label><input type="radio" name="data" value="2026-05-22"> 22/05</label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="horario">Selecione o Horário:</label>
+                    <select id="horario" required>
+                        <option value="">-- Escolha o Horário --</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="botao-principal">Confirmar Agendamento</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 Beleza Hub. Todos os direitos reservados.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+/* ==========================================================================
+   1. RESET BÁSICO E FONTES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pra padding não quebrar o tamanho da div */
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #f4f8f8;
+    color: #2b3536;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Acessibilidade */
+.link-atalho-teclado {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px;
+    z-index: 1000;
+}
+.link-atalho-teclado:focus {
+    top: 0;
+}
+
+/* ==========================================================================
+   2. CONTAINERS E ESTRUTURA
+   ========================================================================== */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.container-restrito {
+    max-width: 800px;
+}
+
+/* Container menor pros formulários não ficarem esticados */
+.container-pequeno {
+    width: 92%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #d1dedf;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.secao-padrao {
+    padding: 60px 0;
+}
+
+.secao-fundo-alternativo {
+    background-color: #eaf1f1;
+}
+
+/* Sistema de Grid com Flexbox bem simples */
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.coluna-1 { width: 100%; padding: 10px; }
+.coluna-2 { width: 50%; padding: 10px; }
+.coluna-3 { width: 33.333%; padding: 10px; }
+
+/* ==========================================================================
+   3. MENU E CABEÇALHO
+   ========================================================================== */
+#cabecalho-principal {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1dedf;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-interacoes {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    color: #0f707e;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#menu-navegacao a {
+    text-decoration: none;
+    color: #4a5657;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+#menu-navegacao a:hover {
+    background-color: #eaf1f1;
+    color: #0f707e;
+}
+
+#menu-navegacao a.active {
+    background-color: #0f707e;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   4. BOTÕES GERAIS
+   ========================================================================== */
+.btn-tema-emoji {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 20px;
+    transition: transform 0.2s;
+}
+.btn-tema-emoji:hover {
+    transform: scale(1.2);
+}
+
+.botao-principal, .botao-secundario {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-principal {
+    background-color: #0f707e;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 6px rgba(15,112,126,0.2);
+}
+.botao-principal:hover {
+    background-color: #0b545f;
+}
+
+.botao-secundario {
+    background-color: transparent;
+    color: #0f707e;
+    border: 2px solid #0f707e;
+}
+.botao-secundario:hover {
+    background-color: #0f707e;
+    color: #ffffff;
+}
+
+/* Botões de deletar/sair no perfil */
+.botoes-container-seguro {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-alerta { border-color: #ff9900; color: #ff9900; }
+.btn-alerta:hover { background-color: #ff9900; color: #ffffff; }
+
+.btn-perigo { border-color: #cc0000; color: #cc0000; }
+.btn-perigo:hover { background-color: #cc0000; color: #ffffff; }
+
+/* ==========================================================================
+   5. COMPONENTES VISUAIS (Cards e Tabelas)
+   ========================================================================== */
+#banner-hero {
+    background-color: #e1eded;
+    padding: 100px 0;
+    border-bottom: 1px solid #cbdcdc;
+}
+
+#banner-hero h1 { font-size: 2.8rem; color: #0f707e; margin-bottom: 20px; }
+#banner-hero p { font-size: 1.25rem; color: #4a5657; margin-bottom: 35px; }
+
+.grupo-botoes-hero {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Juntei as classes pq tinham o mesmo CSS */
+.cartao-beneficio, .cartao-servico, .cartao-perfil {
+    background-color: #ffffff;
+    border: 1px solid #d1dedf;
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+}
+
+.icone-beneficio { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+.preco-servico { display: block; margin-top: 15px; font-weight: 700; color: #0f707e; font-size: 1.1rem; }
+.subtitulo-secao { color: #5c6e70; margin-bottom: 30px; }
+
+/* Tabelas */
+.tabela-padrao, .tabela-calendario {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin: 15px 0;
+}
+
+.tabela-padrao th, .tabela-padrao td,
+.tabela-calendario th, .tabela-calendario td {
+    border: 1px solid #cbdcdc;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-padrao th, .tabela-calendario th {
+    background-color: #eaf1f1;
+    color: #0f707e;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   6. FORMULÁRIOS
+   ========================================================================== */
+.campo-grupo { margin-bottom: 20px; }
+.campo-grupo label { display: block; font-weight: 600; margin-bottom: 8px; color: #4a5657; }
+
+.campo-grupo input:not([type="checkbox"]):not([type="radio"]),
+.campo-grupo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a3b8b9;
+    border-radius: 4px;
+    background-color: #fafdfd;
+}
+
+.campo-grupo-checkbox {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   7. GESTÃO E MODAIS
+   ========================================================================== */
+.bloco-indicador {
+    background-color: #eaf1f1;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 5px solid #0f707e;
+}
+.titulo-indicador { display: block; font-size: 0.9rem; color: #4a5657; margin-bottom: 5px; }
+.valor-indicador { font-size: 1.8rem; color: #0f707e; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center; justify-content: center;
+    z-index: 1000;
+}
+.modal-conteudo { background-color: #ffffff; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+.grupo-botoes-modal { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+
+/* Botões dentro da tabela */
+.btn-acao-tabela {
+    background: none; border: none;
+    font-size: 0.9rem; font-weight: 700;
+    text-decoration: underline; cursor: pointer;
+    margin-right: 10px;
+}
+.btn-remarcar-item { color: #0f707e; }
+.btn-cancelar-item { color: #c42c2c; }
+
+/* Classe utilitária pra esconder as coisas via JS */
+.display-none { display: none !important; }
+
+/* Imagem da tela sobre */
+.imagem-sobre img {
+    max-width: 100%; height: auto;
+    border-radius: 8px; border: 5px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.imagem-sobre figcaption { font-size: 0.9rem; margin-top: 10px; font-style: italic; color: #637576; }
+
+/* Rodapé */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #d1dedf;
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+footer .container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (Mobile)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .coluna-2, .coluna-3 { width: 100%; margin-bottom: 20px; }
+    .header-flex { flex-direction: column; gap: 15px; }
+    #menu-navegacao ul { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ==========================================================================
+   9. MODO ESCURO (Toggle no JS)
+   ========================================================================== */
+body.tema-escuro { background-color: #121516; color: #f5f5f5; }
+
+body.tema-escuro #cabecalho-principal,
+body.tema-escuro footer,
+body.tema-escuro .cartao-beneficio,
+body.tema-escuro .cartao-servico,
+body.tema-escuro .cartao-perfil,
+body.tema-escuro .container-pequeno,
+body.tema-escuro .tabela-padrao,
+body.tema-escuro .tabela-calendario,
+body.tema-escuro .modal-conteudo {
+    background-color: #1a1e1f; border-color: #313a3c; color: #f5f5f5;
+}
+
+body.tema-escuro #banner-hero { background-color: #142224; border-bottom: 1px solid #313a3c; }
+body.tema-escuro #banner-hero p { color: #e5eded !important; }
+body.tema-escuro #nossos-servicos, body.tema-escuro .secao-fundo-alternativo { background-color: #0b0d0e !important; }
+body.tema-escuro .subtitulo-secao { color: #cbdcdc !important; }
+
+body.tema-escuro h1, body.tema-escuro h2, body.tema-escuro h3,
+body.tema-escuro strong, body.tema-escuro #logo, body.tema-escuro .preco-servico { color: #3cd4e6; }
+body.tema-escuro p, body.tema-escuro label, body.tema-escuro td { color: #cbdcdc; }
+
+body.tema-escuro #menu-navegacao a { color: #f5f5f5; }
+body.tema-escuro #menu-navegacao a:hover, body.tema-escuro .tabela-calendario td:hover { background-color: #313a3c; color: #3cd4e6; }
+body.tema-escuro #menu-navegacao a.active { background-color: #0f707e; color: #ffffff; }
+
+body.tema-escuro .tabela-padrao th, body.tema-escuro .tabela-calendario th {
+    background-color: #121516; color: #3cd4e6; border-color: #313a3c;
+}
+
+body.tema-escuro input, body.tema-escuro select {
+    background-color: #242a2b !important;
+    border: 1px solid #4b585a !important;
+    color: #ffffff !important;
+}
+
+body.tema-escuro .bloco-indicador { background-color: #242a2b; border-left: 5px solid #3cd4e6; }
+body.tema-escuro .btn-remarcar-item { color: #3cd4e6; }
+body.tema-escuro .btn-cancelar-item { color: #ff6b6b; }
